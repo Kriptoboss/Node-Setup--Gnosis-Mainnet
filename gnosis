@@ -1,0 +1,16 @@
+apt install screen
+
+screen -S anasayfa
+
+sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip
+
+
+wget https://github.com/NethermindEth/nethermind/releases/download/1.14.2/nethermind-linux-amd64-1.14.2-08354f9-20220915.zip
+
+
+unzip nethermind-linux-amd64-1.14.2-08354f9-20220915.zip -d nethermind
+
+
+cd nethermind
+
+./Nethermind.Runner --JsonRpc.Enabled true --config xdai --datadir /path/to/datadir --Sync.FastSync true --Init.WebSocketsEnabled true --JsonRpc.Host 0.0.0.0
